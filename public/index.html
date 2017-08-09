@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Firebase React</title>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCU1O7cvlhWlqbhf7fd7sNfle90kPSTL4k",
+        authDomain: "collaborative-todo.firebaseapp.com",
+        databaseURL: "https://collaborative-todo.firebaseio.com",
+        projectId: "collaborative-todo",
+        storageBucket: "collaborative-todo.appspot.com",
+        messagingSenderId: "847737187707"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script src="./bundle.js"></script>
+</html>
