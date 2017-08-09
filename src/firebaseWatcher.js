@@ -1,11 +1,9 @@
 const db = firebase.database()
-
 import {getAllLists, loadList} from './actions'
-
 const listsRef = db.ref('lists')
 
 export function setupFirebaseListeners(dispatch) {
-    const dispatchGetAllLists = snap => {
+    listsRef.on('value', snap => {
         const lists = []
         snap.forEach(child => {
             lists.push({
@@ -14,14 +12,5 @@ export function setupFirebaseListeners(dispatch) {
             })
         })
         dispatch(getAllLists(lists))
-    }
-    listsRef.on('value', dispatchGetAllLists)
-    listsRef.on('child_changed', snap => {
-        const ref = snap.ref
-        ref.once('value', snap => {
-            if(snap.val().items){
-                dispatch(loadList(snap.key))
-            }
-        })
     })
 }

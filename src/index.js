@@ -4,9 +4,9 @@ import {Provider} from 'react-redux'
 import {createStore, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 
-import App from './components/App'
+import App from './App'
 import {setupFirebaseListeners} from './firebaseWatcher'
-import reducer from './reducers/reducer'
+import reducer from './reducer'
 
 const store = createStore(reducer,applyMiddleware(thunk))
 

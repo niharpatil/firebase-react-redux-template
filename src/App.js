@@ -1,10 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import uuid from 'uuid/v4'
-import {loadList, createList, deleteList} from '../actions'
-import api from '../api'
+import {loadList, createList, deleteList} from './actions'
+import api from './api'
 
-class AllLists extends React.Component {
+class App extends React.Component {
     createList(){
         const newListName = prompt('Name for new list')
         api.createList(newListName)
@@ -17,7 +17,7 @@ class AllLists extends React.Component {
                         this.props.lists.map(list => {
                             return (
                                 <li key={uuid()}>
-                                    <span onClick={()=>{this.props.viewSpecificListDispatch(list.key)}}>{list.name}</span>
+                                    <span>{list.name}</span>
                                     <button onClick={()=>{api.deleteList(list.key)}}>X</button>
                                 </li>
                             )
@@ -32,14 +32,8 @@ class AllLists extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        lists: state.lists
+        lists: state
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        viewSpecificListDispatch: (key) => {dispatch(loadList(key))},
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(AllLists)
+export default connect(mapStateToProps)(App)
