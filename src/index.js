@@ -5,10 +5,10 @@ import {createStore} from 'redux'
 
 import App from './App'
 import watcher from './firebaseWatcher'
-
-//import store
+import store from './store'
 
 //setup firebase listeners
+watcher(store.dispatch)
 
 ReactDOM.render(
     <Provider store={store}>
