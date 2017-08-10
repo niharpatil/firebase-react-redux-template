@@ -8,7 +8,7 @@ import watcher from './firebaseWatcher'
 import store from './store'
 
 //setup firebase listeners
-watcher(store.dispatch)
+
 
 ReactDOM.render(
     <Provider store={store}>
