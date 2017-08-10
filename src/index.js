@@ -5,9 +5,8 @@ import {createStore} from 'redux'
 
 import App from './App'
 import watcher from './firebaseWatcher'
-import reducer from './reducer'
 
-//create store
+//import store
 
 //setup firebase listeners
 
