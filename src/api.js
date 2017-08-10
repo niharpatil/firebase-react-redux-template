@@ -1,17 +1,17 @@
 const db = firebase.database()
 
-function createList(name) {
+function createItem(name) {
 
 }
 
-function deleteList(listKey){
+function deleteItem(listKey){
 
 }
 
-function updateList(listKey, listData){
+function updateItem(listKey, listData){
 
 }
 
 export default {
-    createList,deleteList,updateList
+    createItem,deleteItem,updateItem
 }
