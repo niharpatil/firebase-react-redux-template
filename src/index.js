@@ -1,16 +1,15 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import {Provider} from 'react-redux'
-import {createStore, applyMiddleware} from 'redux'
-import thunk from 'redux-thunk'
+import {createStore} from 'redux'
 
 import App from './App'
-import {setupFirebaseListeners} from './firebaseWatcher'
+import watcher from './firebaseWatcher'
 import reducer from './reducer'
 
-const store = createStore(reducer,applyMiddleware(thunk))
+//create store
 
-setupFirebaseListeners(store.dispatch)
+//setup firebase listeners
 
 ReactDOM.render(
     <Provider store={store}>

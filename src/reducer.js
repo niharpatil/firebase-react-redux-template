@@ -3,6 +3,6 @@ export default (state = [], action) => {
         case 'GET_ALL_LISTS':
             return action.lists
         default:
-            return state.slice()
+            return state
     }
 }

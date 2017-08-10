@@ -1,30 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import uuid from 'uuid/v4'
-import {loadList, createList, deleteList} from './actions'
 import api from './api'
 
 class App extends React.Component {
-    createList(){
-        const newListName = prompt('Name for new list')
-        api.createList(newListName)
-    }
+    //be able to render list with delete button next to items
+    //have a button to create new lists
     render(){
         return(
             <div>
-                <ul>
-                    {
-                        this.props.lists.map(list => {
-                            return (
-                                <li key={uuid()}>
-                                    <span>{list.name}</span>
-                                    <button onClick={()=>{api.deleteList(list.key)}}>X</button>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
-                <button onClick={this.createList}>Create New List</button>
             </div>
         )
     }
