@@ -4,11 +4,11 @@ function createItem(name) {
 
 }
 
-function deleteItem(listKey){
+function deleteItem(itemKey){
 
 }
 
-function updateItem(listKey, listData){
+function updateItem(itemKey, name){
 
 }
 
